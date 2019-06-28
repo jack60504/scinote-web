@@ -1,5 +1,10 @@
 en:
   protocol_importers:
+    new:
+      modal_title: 'Import protocol - %{protocol_name}'
+    card:
+      views_and_steps: '%{nr_of_views} views • %{nr_of_steps} steps'
+      import_button_text: 'Import...'
     templates:
       amount:
         title: 'Amount'
@@ -42,8 +47,3 @@ en:
         title: 'Temperature'
       warning:
         title: 'Warning'
-
-
-
-
-

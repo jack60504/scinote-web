@@ -3,6 +3,7 @@
 module ProtocolImporters
   class SearchProtocolsService
     extend Service
+    require 'protocol_importers/protocols_io/v3/errors'
 
     attr_reader :errors, :protocols_list
 
@@ -10,17 +11,28 @@ module ProtocolImporters
 
     def initialize(protocol_source:, query_params: {})
       @protocol_source = protocol_source
-      @query_params = query_params
+      @query_params = query_params.except(:protocol_source)
       @errors = Hash.new { |h, k| h[k] = {} }
     end
 
     def call
       return self unless valid?
 
+      # Call api client
       api_response = api_client.protocol_list(@query_params)
 
+      # Normalize protocols list
       @protocols_list = normalizer.normalize_list(api_response)
 
+      self
+    rescue api_errors => e
+      @errors[e.error_type] = e.message
+      self
+    rescue normalizer_errors => e
+      @errors[e.error_type] = e.message
+      self
+    rescue StandardError => e
+      @errors[:build_protocol] = e.message
       self
     end
 
@@ -39,16 +51,6 @@ module ProtocolImporters
         @errors[:invalid_params][:page_id] = 'Page needs to be positive'
       end
 
-      # try if order_field is ok
-      if @query_params[:order_field] && CONSTANTS[:available_order_fields].exclude?(@query_params[:order_field]&.to_sym)
-        @errors[:invalid_params][:order_field] = 'Order field is not ok'
-      end
-
-      # try if order dir is ok
-      if @query_params[:order_field] && CONSTANTS[:available_order_dirs].exclude?(@query_params[:order_dir]&.to_sym)
-        @errors[:invalid_params][:order_dir] = 'Order dir is not ok'
-      end
-
       # try if endpints exists
       @errors[:invalid_params][:source_endpoint] = 'Wrong source endpoint' unless endpoint_name&.is_a?(String)
 
@@ -65,6 +67,14 @@ module ProtocolImporters
 
     def normalizer
       "ProtocolImporters::#{endpoint_name}::ProtocolNormalizer".constantize.new
+    end
+
+    def api_errors
+      "ProtocolImporters::#{endpoint_name}::Error".constantize
+    end
+
+    def normalizer_errors
+      "ProtocolImporters::#{endpoint_name}::NormalizerError".constantize
     end
   end
 end

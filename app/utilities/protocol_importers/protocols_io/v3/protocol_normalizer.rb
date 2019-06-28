@@ -4,6 +4,8 @@ module ProtocolImporters
   module ProtocolsIO
     module V3
       class ProtocolNormalizer < ProtocolImporters::ProtocolNormalizer
+        require 'protocol_importers/protocols_io/v3/errors'
+
         def normalize_protocol(client_data)
           # client_data is HttpParty ApiReponse object
           protocol_hash = client_data.parsed_response.with_indifferent_access[:protocol]
@@ -18,10 +20,15 @@ module ProtocolImporters
             name: protocol_hash[:title],
             description: {
               body: protocol_hash[:description],
-              image: protocol_hash[:image][:source]
+              image: protocol_hash[:image][:source],
+              extra_content: []
             },
             authors: protocol_hash[:authors].map { |e| e[:name] }.join(', ')
           }
+
+          { before_start: 'Before start', guidelines: 'Guidelines', warning: 'Warnings' }.each do |k, v|
+            normalized_data[:description][:extra_content] << { title: v, body: protocol_hash[k] } if protocol_hash[k]
+          end
 
           normalized_data[:steps] = protocol_hash[:steps].map do |e|
             {
@@ -43,30 +50,42 @@ module ProtocolImporters
           original_order = protocol_hash[:steps].map { |m| [m[:previous_id], m[:id]] }.to_h
           current_position = 0
           while next_step_id
+
             current_position += 1
             steps[next_step_id][:position] = current_position
             next_step_id = original_order[next_step_id]
           end
 
+          # Check if step name are valid
+          steps.each do |step|
+            step[1][:name] = "Step #{(step[1][:position] + 1)}" if step[1][:name].blank?
+          end
+
           { protocol: normalized_data }
+        rescue StandardError => e
+          raise ProtocolImporters::ProtocolsIO::V3::NormalizerError.new(e.class.to_s.downcase.to_sym), e.message
         end
 
         def normalize_list(client_data)
           # client_data is HttpParty ApiReponse object
           protocols_hash = client_data.parsed_response.with_indifferent_access[:items]
+
           normalized_data = {}
           normalized_data[:protocols] = protocols_hash.map do |e|
             {
-              "id": e[:id],
-              "title": e[:title],
-              "created_on": e[:created_on],
-              "authors": e[:authors].map { |a| a[:name] }.join(', '),
-              "nr_of_steps": e[:stats][:number_of_steps],
-              "nr_of_views": e[:stats][:number_of_views],
-              "uri": e[:uri]
+              id: e[:id],
+              title: e[:title],
+              source: Constants::PROTOCOLS_IO_V3_API[:source_id],
+              created_on: e[:created_on],
+              authors: e[:authors].map { |a| a[:name] }.join(', '),
+              nr_of_steps: e[:stats][:number_of_steps],
+              nr_of_views: e[:stats][:number_of_views],
+              uri: e[:uri]
             }
           end
           normalized_data
+        rescue StandardError => e
+          raise ProtocolImporters::ProtocolsIO::V3::NormalizerError.new(e.class.to_s.downcase.to_sym), e.message
         end
       end
     end
