@@ -26,11 +26,17 @@ module Scinote
     config.autoload_paths += Dir["#{Rails.root}/app/models/concerns/**/*.rb"]
 
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    
+    config.i18n.available_locales = [:en, :"zh-CN"]
+ 
+    # Set default locale to something other than :en
+    config.i18n.default_locale = :"zh-CN"
 
     config.encoding = 'utf-8'
 
     config.active_job.queue_adapter = :delayed_job
 
+    
     # Max uploaded file size in MB
     config.x.file_max_size_mb = (ENV['FILE_MAX_SIZE_MB'] || 50).to_i
 

@@ -1,0 +1,115 @@
+---
+en:
+  activerecord:
+    attributes:
+      doorkeeper/application:
+        name: 名称
+        redirect_uri: 重定向URI
+    errors:
+      models:
+        doorkeeper/application:
+          attributes:
+            redirect_uri:
+              fragment_present: 不能包含片段。
+              invalid_uri: 必须是有效的URI。
+              relative_uri: 必须是绝对URI。
+              secured_uri: 必须是HTTPS
+              forbidden_uri: 被服务器禁止。
+  doorkeeper:
+    applications:
+      confirmations:
+        destroy: 你确定吗？
+      buttons:
+        edit: 编辑
+        destroy: 破坏
+        submit: 提交
+        cancel: 取消
+        authorize: 授权
+      form:
+        error: 哎呦！ 检查您的表单是否存在错误
+      help:
+        confidential: 如果客户机密可以保密，将使用申请。 原生移动应用和单页应用被视为非机密。
+        redirect_uri: 每个URI使用一行
+        native_redirect_uri: 如果要为开发目的添加localhost URI，请使用%{native_redirect_uri}
+        scopes: 用空格分隔范围。 留空以使用默认范围。
+      edit:
+        title: 编辑应用程序
+      index:
+        title: 你的申请
+        new: 新申请
+        name: 名称
+        callback_url: 回调网址
+        confidential: 机密？
+        confidentiality:
+          'yes': 是
+          'no': 没有
+      new:
+        title: 新申请
+      show:
+        title: 应用名称}
+        application_id: 申请ID
+        secret: 秘密
+        scopes: 领域
+        confidential: 机密
+        callback_urls: 回调网址
+        actions: 操作
+    authorizations:
+      buttons:
+        authorize: 授权
+        deny: 拒绝
+      error:
+        title: 发生了错误
+      new:
+        title: 需要授权
+        prompt: 授权%{client_name}使用您的帐户？
+        able_to: 这个应用程序将能够
+      show:
+        title: 授权码
+    authorized_applications:
+      confirmations:
+        revoke: 你确定吗？
+      buttons:
+        revoke: 撤消
+      index:
+        title: 您的授权申请
+        application: 应用
+        created_at: 创建于
+        date_format: "%Y-%m-%d%H：%M：%S"
+    errors:
+      messages:
+        invalid_request: 请求缺少必需参数，包含不受支持的参数值，否则会格式错误。
+        invalid_redirect_uri: 请求的重定向uri格式错误或与客户端重定向URI不匹配。
+        unauthorized_client: 客户端无权使用此方法执行此请求。
+        access_denied: 资源所有者或授权服务器拒绝了该请求。
+        invalid_scope: 请求的范围无效，未知或格式错误。
+        server_error: 授权服务器遇到意外情况，导致无法完成请求。
+        temporarily_unavailable: 由于服务器的临时过载或维护，授权服务器当前无法处理请求。
+        credential_flow_not_configured: 由于未配置Doorkeeper.configure.resource_owner_from_credentials，资源所有者密码凭据流失败。
+        resource_owner_authenticator_not_configured: 由于未配置Doorkeeper.configure.resource_owner_authenticator，资源所有者发现失败。
+        unsupported_response_type: 授权服务器不支持此响应类型。
+        invalid_client: 由于客户端未知，未包含客户端身份验证或不支持的身份验证方法，客户端身份验证失败。
+        invalid_grant: 提供的授权授权无效，已过期，已撤销，与授权请求中使用的重定向URI不匹配，或已颁发给其他客户端。
+        unsupported_grant_type: 授权服务器不支持授权授权类型。
+        invalid_token:
+          revoked: 访问令牌已被撤销
+          expired: 访问令牌已过期
+          unknown: 访问令牌无效
+    flash:
+      applications:
+        create:
+          notice: 应用创建。
+        destroy:
+          notice: 申请已删除。
+        update:
+          notice: 应用程序更新
+      authorized_applications:
+        destroy:
+          notice: 申请被撤销。
+    layouts:
+      admin:
+        nav:
+          oauth2_provider: OAuth2提供商
+          applications: 应用
+          home: 家
+      application:
+        title: 需要OAuth授权

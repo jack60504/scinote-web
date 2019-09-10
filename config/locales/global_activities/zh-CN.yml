@@ -1,0 +1,274 @@
+---
+en:
+  global_activities:
+    index:
+      teams: 球队
+      activity: 已创建活动
+      period_label: 创建的活动：
+      today: 今天
+      yesterday: 昨天
+      this_week: 本星期
+      last_week: 上个星期
+      this_month: 这个月
+      last_month: 上个月
+      custom_dates_label: 选择自定义日期
+      from_label: 选择结束日期
+      to_label: 选择开始日期
+      clear: 明确
+      activity_type: 活动类型
+      user: 用户
+      object: 宾语
+      all_teams_btn: 取消选择所有团队
+      all_users_btn: 取消选择所有用户
+      all_activities: 所有活动
+      all_activities_btn: 选择所有活动
+      l_activities: 活动
+      clear_filters: 清除过滤器
+      select_teams: 选择团队
+      select_activity_types: 选择活动类型
+      select_users: 选择用户
+      select_objects: 选择对象
+      deselect_all_objects: 取消选择所有对象
+      no_name: "（未命名）"
+      content_generation_error: 无法呈现ID为%{activity_id}的活动内容
+    content:
+      create_project_html: "%{user}已创建项目%{project}。"
+      rename_project_html: "%{user}已重命名为project {project}。"
+      change_project_visibility_html: "%{user}已将项目%{project}的可见性更改为%{visibility}。"
+      archive_project_html: "%{user}已归档项目%{project}。"
+      restore_project_html: "%{user}从归档中恢复了项目%{project}。"
+      add_comment_to_project_html: "%{user}对项目%{project}发表了评论。"
+      edit_project_comment_html: "%{user}编辑了对项目%{project}的评论。"
+      delete_project_comment_html: "%{user}已删除对项目%{project}的评论。"
+      create_report_html: "%{user}已创建报告<strong>%{report} <"
+      edit_report_html: "%{user}已修改报告<strong>%{report} <"
+      delete_report_html: "%{user}已删除报告<strong>%{report} <"
+      add_result_html: "%{user}已添加%{type_of_result}结果%{result}。"
+      edit_result_html: "%{user}已编辑%{type_of_result}结果%{result}。"
+      add_comment_to_result_html: "%{user}对结果%{result}发表了评论。"
+      edit_result_comment_html: "%{user}修改了对结果%{result}的评论。"
+      delete_result_comment_html: "%{user}已删除对结果%{result}的评论。"
+      archive_result_html: "%{user}已归档%{type_of_result}结果%{result}。"
+      destroy_result_html: "%{user}已删除%{type_of_result}结果%{result}。"
+      create_module_html: "%{user}已创建任务%{my_module}。"
+      clone_module_html: "%{user}将任务%{my_module_original}中的任务%{my_module_new}复制为模板。"
+      restore_module_html: "%{user}从归档中恢复了任务%{my_module}。"
+      add_comment_to_module_html: "%{user}对任务%{my_module}发表了评论。"
+      edit_module_comment_html: "%{user}编辑了对任务%{my_module}的评论。"
+      delete_module_comment_html: "%{user}已删除对任务%{my_module}的评论。"
+      change_module_description_html: "%{user}编辑了任务%{my_module}的说明。"
+      create_step_html: "%{user}已创建协议的步骤%{step_position} <strong>%{step} <"
+      edit_step_html: "%{user}已编辑协议的步骤%{step_position} <strong>%{step} <"
+      destroy_step_html: "%{user}已删除协议的步骤%{step_position} <strong>%{step} <"
+      load_protocol_to_task_from_repository_html: "%{user}从协议存储库%{protocol_repository}加载协议到任务%{my_module}。"
+      load_protocol_to_task_from_file_html: "%{user}从文件中将协议加载到任务%{my_module}。"
+      update_protocol_in_task_from_repository_html: "%{user}已更新任务%{my_module}上的协议，其版本来自协议存储库%{protocol_repository}。"
+      update_protocol_in_repository_from_task_html: "%{user}已在协议存储库中更新协议%{protocol_repository}，版本来自任务%{my_module}。"
+      check_step_checklist_item_html: "%{user}已完成核对清单项<strong>%{checkbox} <"
+      uncheck_step_checklist_item_html: "%{user}未完成核对清单项<strong>%{checkbox} <"
+      add_comment_to_step_html: "%{user}对协议的步骤%{step_position} <strong>%{step} <发表了评论"
+      edit_step_comment_html: "%{user}修改了协议步骤%{step_position} <strong>%{step} <的评论"
+      delete_step_comment_html: "%{user}已删除对协议步骤%{step_position} <strong>%{step} <的评论"
+      complete_step_html: "%{user}已完成协议步骤%{step position} <strong>%{step} <"
+      uncomplete_step_html: "%{user}未完成协议的步骤%{step_position} <strong>%{step} <"
+      complete_task_html: "%{user}已完成任务%{my_module}。"
+      uncomplete_task_html: "%{user}未完成的任务%{my_module}。"
+      assign_repository_record_html: "%{user}已将库存商品%{record_names}从库存%{存储库}分配到任务%{my_module}。"
+      unassign_repository_record_html: 从库存%{存储库}到任务%{my_module}的%{user}未分配库存商品%{record_names}。
+      assign_user_to_project_html: "%{user}已将用户%{user_target}分配给用户角色%{role}以投影%{project}。"
+      unassign_user_from_project_html: "%{user}已从项目%{project}中删除了用户角色%{role}的用户%{user_target}。"
+      change_user_role_on_project_html: "%{user}将项目%{project}上的%{user_target}角色更改为%{role}。"
+      assign_user_to_module_html: "%{user}已将用户%{user_target}分配给任务%{my_module}。"
+      unassign_user_from_module_html: "%{user}已从任务%{my_module}中删除了用户%{user_target}。"
+      create_experiment_html: "%{user}已创建实验%{experiment}。"
+      edit_experiment_html: "%{user}已修改的实验%{experiment}。"
+      move_experiment_html: "%{user}已将项目%{project_original}中的实验%{experiment}移至项目%{project_new}。"
+      clone_experiment_html: "%{user}将实验%{experiment_original}中的实验%{experiment_new}复制为模板。"
+      archive_experiment_html: "%{user}归档实验%{experiment}。"
+      edit_wopi_file_on_result_html: "%{user}已在结果%{result}上编辑了Office在线文件%{asset_name}：%{action}。"
+      export_protocol_from_task_html: 来自任务%{my_module}的%{user}导出协议
+      copy_protocol_in_repository_html: "%{user}将协议%{protocol_original}中的协议%{protocol_new}复制为模板"
+      user_leave_team_html: "%{user}将协议%{protocol_original}中的协议%{protocol_new}复制为模板..."
+      edit_wopi_file_on_step_html: "%{user}将协议%{protocol_original}中的协议%{protocol_new}复制为模板......"
+      edit_wopi_file_on_step_in_repository_html: "%{user}在协议存储库中的协议%{protocol}的步骤%{step_position}%{step}中编辑了Office联机文件%{asset_name}：%{action}。"
+      restore_experiment_html: "%{user}已恢复实验%{experiment}。"
+      rename_task_html: "%{user}已重命名为任务%{my_module}。"
+      move_task_html: "%{user}已将任务%{my_module}从实验%{experiment_original}移至实验%{experiment_new}。"
+      archive_module_html: "%{user}已归档的任务%{my_module}。"
+      set_task_due_date_html: "%{user}在任务%{my_module}上设置截止日期%{my_module_duedate}。"
+      change_task_due_date_html: "%{user}在任务%{my_module}上更改了截止日期%{my_module_duedate}。"
+      remove_task_due_date_html: "%{user}已在任务%{my_module}上删除截止日期%{my_module_duedate}。"
+      add_task_tag_html: "%{user}添加了标记<strong>%{tag} <"
+      remove_task_tag_html: "%{user}已移除标记<strong>%{tag} <"
+      create_inventory_html: "%{user}已创建广告资源%{存储库}。"
+      rename_inventory_html: "%{user}已重命名为inventory%{repository}。"
+      delete_inventory_html: "%{user}已删除广告资源%{存储库}。"
+      share_inventory_html: "%{user}共享广告资源%{repository}，团队%{team}且%{permission_level}权限。"
+      unshare_inventory_html: "%{user}已停止与团队%{team}共享广告资源%{存储库}。"
+      update_share_inventory_html: "%{user}已将团队%{team}的共享广告资源%{repository}的权限更改为%{permission_level}。"
+      share_inventory_with_all_html: "%{user}共享库存%{存储库}，所有团队（当前和未来）具有%{permission_level}权限。"
+      unshare_inventory_with_all_html: "%{user}已停止与所有团队（当前和未来）共享库存%{存储库}。"
+      update_share_with_all_permission_level_html: "%{user}已将所有团队的共享广告资源%{repository}的权限更改为%{permission_level}。"
+      create_item_inventory_html: "%{user}已创建广告资源项%{repository_row}。"
+      edit_item_inventory_html: "%{user}已编辑的广告资源项%{repository_row}。"
+      delete_item_inventory_html: "%{user}已删除广告资源项%{repository_row}。"
+      create_column_inventory_html: "%{user}在广告资源%{存储库}中创建了列%{repository_column}。"
+      edit_column_inventory_html: "%{user}编辑了库存%{存储库}中的列%{repository_column}。"
+      copy_inventory_html: "%{user}将库存%{repository_original}中的库存%{repository_new}复制为模板"
+      copy_inventory_item_html: "%{user}已从库存料品%{repository_row_original}复制库存料品%{repository_row_new}"
+      delete_column_inventory_html: "%{user}已删除广告资源%{存储库}中的列%{repository_column}。"
+      create_protocol_in_repository_html: "%{user}在协议存储库中创建协议%{protocol}。"
+      add_step_to_protocol_repository_html: "%{user}已创建协议%{协议}的步骤%{step_position} <strong>%{step} <"
+      edit_step_in_protocol_repository_html: "%{user}已编辑的协议%{协议}的步骤%{step_position} <strong>%{step} <"
+      delete_step_in_protocol_repository_html: "%{user}已删除协议%{协议}的步骤%{step_position} <strong>%{step} <"
+      edit_description_in_protocol_repository_html: "%{user}编辑协议%{protocol}在协议存储库中的描述。"
+      edit_keywords_in_protocol_repository_html: "%{user}编辑协议%{protocol}在协议库中的关键字。"
+      edit_authors_in_protocol_repository_html: "%{user}编辑协议%{protocol}的作者在协议库中。"
+      archive_protocol_in_repository_html: 协议存储库中的%{user}归档协议%{protocol}。
+      restore_protocol_in_repository_html: "%{user}已从协议存储库中的存档中恢复协议%{protocol}。"
+      move_protocol_in_repository_html: "%{user}从协议存储库中的%{storage}移动了协议%{protocol}。"
+      import_protocol_in_repository_html: "%{user}从文件导入协议%{protocol}到协议存储库。"
+      export_protocol_in_repository_html: 来自协议存储库的%{user}导出协议%{protocol}。
+      invite_user_to_team_html: "%{user}邀请用户%{user_invited}与团队%{team}合作，用户角色为%{role}。"
+      remove_user_from_team_html: "%{user}已从团队%{team}中删除了用户%{user_removed}。"
+      change_users_role_on_team_html: "%{user}将用户%{user_changed}在团队%{team}中的角色更改为%{role}。"
+      export_projects_html: "%{user}将项目%{projects}导出到.zip。"
+      export_inventory_items_html: "%{user}从%{repository}导出的库存商品。"
+      create_tag_html: "%{user}已创建标记<strong>%{tag} <"
+      edit_tag_html: "%{user}已修改标记<strong>%{tag} <"
+      delete_tag_html: "%{user}已删除标记<strong>%{tag} <"
+      import_inventory_items_html: "%{user}将%{num_of_items}个库存商品导入%{存储库}。"
+      edit_image_on_result_html: 结果%{result}上的%{user}已修改图片%{asset_name}：%{action}。
+      edit_image_on_step_html: "%{user}已在协议的步骤%{step_position}%{step}上执行%{my_module}：%{action}上编辑了图像%{asset_name}。"
+      edit_image_on_step_in_repository_html: "%{user}编辑的图像%{asset_name}协议%{protocol}在协议存储库中的步骤%{step_position}%{step}：%{action}。"
+    activity_name:
+      create_project: 项目创建
+      rename_project: 项目已重命名
+      change_project_visibility: 项目可见性已更改
+      archive_project: 项目已存档
+      restore_project: 项目恢复
+      add_comment_to_project: 项目评论补充说
+      edit_project_comment: 项目评论已编辑
+      delete_project_comment: 项目评论已删除
+      create_report: 报告已创建
+      edit_report: 报告已编辑
+      delete_report: 报告已删除
+      add_result: 结果添加
+      edit_result: 结果已编辑
+      add_comment_to_result: 结果评论已添加
+      edit_result_comment: 结果评论已编辑
+      delete_result_comment: 结果评论已删除
+      archive_result: 结果已归档
+      destroy_result: 结果已删除
+      create_module: 任务已创建
+      clone_module: 任务已复制
+      archive_module: 任务已存档
+      restore_module: 任务已恢复
+      add_comment_to_module: 添加了任务评论
+      edit_module_comment: 任务评论已编辑
+      delete_module_comment: 任务评论已删除
+      change_module_description: 任务说明已编辑
+      create_step: 任务步骤已添加
+      edit_step: 任务步骤已编辑
+      destroy_step: 任务步骤已删除
+      load_protocol_to_task_from_repository: 从存储库加载的任务协议
+      load_protocol_to_task_from_file: 从文件加载的任务协议
+      update_protocol_in_task_from_repository: 任务协议从存储库更新
+      check_step_checklist_item: 任务步骤核对表已完成
+      uncheck_step_checklist_item: 任务步骤核对表未完成
+      add_comment_to_step: 添加了任务步骤评论
+      edit_step_comment: 任务步骤评论编辑
+      delete_step_comment: 任务步骤注释已删除
+      complete_step: 任务步骤完成
+      uncomplete_step: 任务步骤未完成
+      uncomplete_task: 任务尚未完成
+      complete_task: 任务完成
+      assign_repository_record: 已分配任务清单
+      unassign_repository_record: 任务库存未分配
+      assign_user_to_project: 用户已分配到项目
+      unassign_user_from_project: 用户从项目中删除
+      change_user_role_on_project: Project上的用户角色已更改
+      assign_user_to_module: 用户已分配给任务
+      unassign_user_from_module: 用户从任务中删除
+      create_experiment: 实验创建
+      edit_experiment: 实验编辑
+      move_experiment: 实验感动了
+      clone_experiment: 实验复制为模板
+      archive_experiment: 实验存档
+      edit_wopi_file_on_result: 编辑结果的Office在线文件
+      edit_wopi_file_on_step: 编辑任务步骤的Office在线文件
+      edit_wopi_file_on_step_in_repository: Office编辑的在线文件
+      restore_experiment: 实验恢复
+      rename_task: 任务已重命名
+      move_task: 任务移动了
+      export_protocol_from_task: 从任务导出协议
+      set_task_due_date: 任务截止日期设置
+      change_task_due_date: 任务截止日期已更改
+      remove_task_due_date: 任务截止日期已删除
+      add_task_tag: 已添加任务标记
+      remove_task_tag: 删除了任务标记
+      create_inventory: 库存已创建
+      rename_inventory: 库存已重命名
+      delete_inventory: 库存已删除
+      share_inventory: 库存共享
+      unshare_inventory: 库存未共享
+      update_share_inventory: 库存共享权限已更新
+      share_inventory_with_all: 库存与所有人共享
+      unshare_inventory_with_all: 库存与所有人共享
+      update_share_with_all_permission_level: 更新所有权限的库存共享
+      create_item_inventory: 库存项目已创建
+      edit_item_inventory: 库存项目已编辑
+      delete_item_inventory: 库存项目已删除
+      create_column_inventory: 库存列已创建
+      edit_column_inventory: 库存列已编辑
+      copy_inventory: 库存已复制
+      copy_inventory_item: 库存项目已复制
+      delete_column_inventory: 库存列已删除
+      update_protocol_in_repository_from_task: 协议从任务更新
+      create_protocol_in_repository: 协议创建
+      add_step_to_protocol_repository: 步骤添加
+      edit_step_in_protocol_repository: 步骤编辑
+      delete_step_in_protocol_repository: 步骤删除
+      edit_description_in_protocol_repository: 描述编辑
+      edit_keywords_in_protocol_repository: 关键字编辑
+      edit_authors_in_protocol_repository: 作者编辑
+      archive_protocol_in_repository: 协议存档
+      restore_protocol_in_repository: 从归档恢复的协议
+      move_protocol_in_repository: 议定书移动了
+      copy_protocol_in_repository: 协议已复制
+      import_protocol_in_repository: 从文件导入的协议
+      export_protocol_in_repository: 协议导出
+      invite_user_to_team: 用户被邀请加入团队
+      remove_user_from_team: 用户从团队中删除
+      change_users_role_on_team: 团队中的用户角色已更改
+      user_leave_team: 用户离队
+      export_projects: 出口项目
+      export_inventory_items: 库存商品已导出
+      create_tag: 标签已创建
+      edit_tag: 标签已编辑
+      delete_tag: 标签已删除
+      import_inventory_items: 库存商品已导入
+      edit_image_on_result: 编辑结果的图像
+      edit_image_on_step: 编辑任务步骤的图像
+      edit_image_on_step_in_repository: 步骤编辑的图像
+    activity_group:
+      projects: 项目
+      task_results: 任务结果
+      task: 任务
+      task_protocol: 任务协议
+      task_inventory: 任务库存
+      experiment: 实验
+      reports: 报告
+      inventories: 存货
+      protocol_repository: 协议库
+      team: 球队
+      exports: 出口
+    subject_name:
+      repository: 库存
+      project: 项目
+      experiment: 实验
+      mymodule: 任务
+      result: 结果
+      protocol: 协议
+      step: 步
+      report: 报告

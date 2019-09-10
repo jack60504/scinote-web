@@ -1,0 +1,32 @@
+---
+en:
+  devise:
+    failure:
+      invited: 您有一个待处理的邀请，接受它以完成您的帐户创建。
+    invitations:
+      send_instructions: 邀请电子邮件已发送至%{email}。
+      invitation_token_invalid: 提供的邀请令牌无效！
+      updated: 您的密码已成功设置。 您现在已登录。
+      updated_not_active: 您的密码已成功设置。
+      no_invitations_remaining: 没有邀请
+      invitation_removed: 您的邀请已被删除。
+      new:
+        header: 发送邀请
+        submit_button: 发送邀请
+      edit:
+        header: 设置你的密码
+        submit_button: 设置我的密码
+    mailer:
+      invitation_instructions:
+        subject: 邀请说明
+        hello: 你好%{email}
+        someone_invited_you: 有人邀请你%{url}，你可以通过下面的链接接受它。
+        accept: 接受邀请
+        accept_until: 此邀请将在%{due_date}中到期。
+        ignore: 如果您不想接受邀请，请忽略此电子邮件。<br
+  time:
+    formats:
+      devise:
+        mailer:
+          invitation_instructions:
+            accept_until_format: "%B%d，%Y%I：%M%p"

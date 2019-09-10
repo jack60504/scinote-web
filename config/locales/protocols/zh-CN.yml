@@ -1,0 +1,54 @@
+---
+en:
+  protocol_importers:
+    errors:
+      cannot_import_protocol: 由于出了问题，我们无法导入协议
+    new:
+      modal_title: 导入协议 - ％{protocol_name}
+    card:
+      views_and_steps: "％{nr_of_views}次观看次数•％{nr_of_steps}步骤"
+      import_button_text: 进口...
+    show_more_button:
+      title: 显示更多协议
+    templates:
+      amount:
+        title: 量
+      command:
+        title: 命令
+        name: 名称
+        code: 命令
+      concentration:
+        title: 浓度
+      dataset:
+        title: 数据集
+        name: 名称
+        link: 链接
+      details:
+        title: 细节
+      duration:
+        title: 持续时间
+        unit: 秒
+      gotostep:
+        title: 转到步骤
+        number: 步骤nr
+        reason: 什么时候
+      link:
+        title: 链接
+      note:
+        title: 注意
+        author: 作者
+      reagent:
+        title: 试剂
+        name: 名称
+        mol_weight: 分子量
+        link: 链接
+      result:
+        title: 预期结果
+      software:
+        title: 软件
+        name: 名称
+        link: 链接
+      temperature:
+        title: 温度
+      warning:
+        title: 警告
